@@ -1,0 +1,11 @@
+include LICENSE
+include .travis.yml
+include requirements.txt
+include test_requirements.txt
+include translate/etc/supported_translations.json
+include version.py
+include HISTORY.rst
+include README.rst
+
+recursive-include translate *.py
+recursive-exclude texts *
