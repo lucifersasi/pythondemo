@@ -1,33 +1,32 @@
+import sys
+import os
+import matplotlib
+from PIL import Image
 
-from PIL import Image, ImageFilter
+# grab 1st and second argument
+source = sys.argv[1]
+# print(source)
+dest = sys.argv[2]
+# print(dest)
 
-pika = Image.open('pokedex/pikachu.jpg')
-bulbasaur = Image.open('pokedex/bulbasaur.jpg')
-# print(img)
-
-# methods
-# filtered_img = pika.filter(ImageFilter.BLUR) # we get smooth, sharpen etc.
-# converted_img = pika.convert("L") # this converts into grey scale
-# rotated_img = pika.rotate(90)
-# resize = bulbasaur.resize((50,50))
-
-# box = (10,10,100,100)
-# part = bulbasaur.crop(box)
-
-pika.thumbnail((100,100)) # doesn't get stretched out and loose quality intelligent best resolution finder
-pika.save("thumbnail.png", 'png')
-print(pika.size)
-
-#saves
-# filtered_img.save("blur.png", 'png')
-# converted_img.save("grey.jpg", 'jpeg')
+# with open(source, 'r') as f:
+#     data = f.read()
 
 
+# check is new/exists, if not create
+# if not os.path.exists(dest):
+#     os.makedirs(dest)
 
-#shows
-# PIL.ImageShow.show(filtered_img)
-# converted_img.show()
-# rotated_img.show()
-# resize.show()
-# part.show()
-pika.show()
+# loopthrough pokedex
+
+for filename in os.listdir(source):
+    if filename.endswith('.jpg'):
+        with open(os.path.join(source , filename)) as f:
+            content = f.read()
+# convertjpg to png
+        content.save(f'{dest}{filename}'+'.png', 'png')
+        dir = dest
+        if not os.path.isdir(dir): os.makedirs(dir)
+        fname = 'forcing' + str(forcing) + 'damping' + str(damping) + 'omega' + str(omega) + 'set2.png'
+        content.savefig(os.path.join(dir, fname))
+# save to new folder
